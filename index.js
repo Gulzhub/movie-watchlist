@@ -1,5 +1,6 @@
 const searchForm = document.getElementById("controls");
 export const main = document.getElementById("main");
+const loader = document.getElementById("loader");
 const movieList = [];
 
 if (searchForm) {
@@ -8,6 +9,7 @@ if (searchForm) {
     const searchInput = document.getElementById("find").value.trim();
 
     if (!searchInput) return;
+    loader.classList.remove("hidden");
 
     main.innerHTML = "";
 
@@ -16,8 +18,9 @@ if (searchForm) {
         `https://www.omdbapi.com/?apikey=8d1bd31c&s=${searchInput}`
       );
       const data = await res.json();
-      // console.log(data.Response);
       if (data.Response === "False") {
+        loader.classList.add("hidden");
+
         main.innerHTML = ` <h2 class="empty try-again">
           Unable to find what you’re looking for. Please try another search.
         </h2>`;
@@ -32,9 +35,11 @@ if (searchForm) {
           return filmResponse.json();
         })
       );
+      loader.classList.add("hidden");
 
       loadFilms(filmDataList);
     } catch (error) {
+      loader.classList.add("hidden");
       console.error(`Error fetching data`, error);
       main.innerHTML = `<h2 class="empty try-again">
         Something went wrong. Please try again later.
