@@ -1,0 +1,339 @@
+/* CSS RESET */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* MY CSS */
+
+body,
+html {
+  font-family: "Inter", sans-serif;
+  background-color: #121212;
+  color: white;
+  height: 100%;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 750x;
+  height: 100%;
+}
+
+header {
+  position: relative;
+  background: url(images/header.png);
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 3.5rem;
+  align-items: center;
+}
+
+.watchlist:hover {
+  opacity: 0.8;
+}
+
+form.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  background-color: #2e2e2f;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 88%;
+  gap: 8px;
+  font-size: 1.1rem;
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+label,
+input {
+  background-color: #2e2e2f;
+}
+
+input,
+button {
+  border: none;
+  color: #a5a5a5;
+}
+
+input {
+  justify-self: flex-start;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border: 1px solid gray;
+}
+label {
+  border-radius: 6px 0 0 6px;
+}
+
+label img {
+  margin: 1rem;
+}
+
+button {
+  color: #ffffff;
+  background-color: #4b4b4b;
+  border-radius: 0 6px 6px 0;
+  align-self: stretch;
+  padding: 0 3rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a5a5a5;
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.empty,
+.movie {
+  align-self: center;
+}
+
+.try-again {
+  color: #787878;
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+.movie,
+.details,
+.title-rating,
+.genre-duration,
+.add-watchlist {
+  display: flex;
+}
+.movie,
+.title-rating,
+.genre-duration {
+  align-items: center;
+}
+.title-rating {
+  gap: 5px;
+}
+.genre-duration {
+  gap: 1rem;
+}
+
+.movie {
+  max-width: 550px;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-bottom: 1.5px solid #2c2c2c;
+}
+.movie:nth-of-type(1) {
+  padding-top: 4rem;
+}
+
+.poster {
+  width: 100px;
+  height: 150px;
+}
+
+.details {
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+h2.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.movie p {
+  font-size: 0.75rem;
+}
+
+button.add-watchlist {
+  text-decoration: none;
+  background-color: #121212;
+  padding: 0;
+  gap: 5px;
+}
+.add-watchlist:hover {
+  /* color: #a5a5a5; */
+  opacity: 0.8;
+}
+.add-watchlist img {
+  height: 1rem;
+}
+.plot {
+  font-size: 0.875rem;
+  color: #a5a5a5;
+}
+
+.go-search {
+  align-self: center;
+  justify-self: center;
+  gap: 0.5rem;
+}
+.go-search img {
+  align-self: center;
+}
+@media screen and (max-width: 525px) {
+  nav {
+    padding: 3rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  input,
+  button {
+    font-size: 0.9rem;
+  }
+  label img {
+    margin: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 461px) {
+  nav {
+    padding: 2.2rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  .movie {
+    flex-direction: column;
+    gap: 1rem;
+    width: 90%;
+  }
+  .poster {
+    width: 90%;
+    height: auto;
+  }
+  .details {
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .plot {
+    text-align: center;
+  }
+
+  .movie:nth-of-type(1) {
+    padding-top: 3rem;
+  }
+}
+
+.toast {
+  text-align: center;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c2c2c;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 1000;
+  font-size: 0.9rem;
+}
+
+.toast.show {
+  opacity: 0.8;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.hidden {
+  display: none;
+}

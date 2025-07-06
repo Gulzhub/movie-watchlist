@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Watchlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <h1>Find your film</h1>
+          <a href="watchlist.html"><p class="watchlist">My Watchlist</p></a>
+        </nav>
+        <form class="controls" id="controls">
+          <label for="find"
+            ><img src="images/search.svg" alt="magnifying glass"
+          /></label>
+          <input type="text" id="find" placeholder="Type your film here" />
+          <button type="submit" id="search-btn">Search</button>
+        </form>
+      </header>
+      <main id="main">
+        <img src="images/explore.svg" alt="Start Exploring" class="empty" />
+      </main>
+    </div>
+    <div id="toast" class="toast hidden">Movie removed from watchlist</div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
